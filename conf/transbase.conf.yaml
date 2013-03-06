@@ -1,0 +1,60 @@
+GLOBAL:
+    trans_cmd: /home/img/hadoop-client/hadoop/bin/hadoop
+    hdp_basedir: /user/ns-image/build-img/result.bak/result.0816
+    order: se vip
+
+DATABASE:
+    host: cq01-yyy-hudson0.cq01.xxx.com
+    port: 5506
+    db: transbase
+    user: img
+    pwd: meihua
+
+DATAINFO:
+    -
+     name: vip
+     dlevel: 1
+     level_num: 30
+     layer_num: 4
+     base_npath: xxx/yyy/image/frontlevel/search/big
+     comment: 
+     datas:
+         -
+          module_type: bs
+          node_path: xxx/yyy/image/frontlevel/search/big/appbs
+          single_level_num: 1
+          # kb/s
+          speedlimit: 10000
+          # abs_path --> /home/data/appbs/index.0
+          data_path: /home/data/appbs
+          dcomment: vip-bs
+         -
+          module_type: di
+          node_path: xxx/yyy/image/frontlevel/search/big/appdi
+          single_level_num: 2
+          speedlimit: 5000
+          # abs_path --> /home/data/appdi0/data/index
+          data_path: /home/data/appdi
+          dcomment: vip-di
+    -
+     name: se
+     dlevel: 2
+     level_num: 180
+     layer_num: 1
+     base_npath: xxx/yyy/image/frontlevel/search/rare
+     comment: 
+     datas:
+         -
+          module_type: bs 
+          node_path: xxx/yyy/image/frontlevel/search/rare/appbs
+          single_level_num: 1
+          speedlimit: 10000
+          data_path: /home/data/appbs
+          dcomment: rare-bs
+         -
+          module_type: di
+          node_path: xxx/yyy/image/frontlevel/search/rare/appdi
+          single_level_num: 4
+          speedlimit: 2500
+          data_path: /home/data/appdi
+          dcomment: rare-di

@@ -1,0 +1,60 @@
+GLOBAL:
+    trans_cmd: /home/img/img_hadoop/hadoop-client/hadoop/bin/hadoop
+    # kb/s
+    params_to_trans: fs -copyToLocal -Dspeed.limit.kb=8000
+    AOS_CMD: /home/img/transbase/bin/aos-lh/bin/aos-lh
+    hdp_basedir: /user/root/build-img/dbuild/merge/result
+    order: se vip
+
+DATABASE:
+    host: cq01-yyy-hudson0.cq01.xxx.com
+    port: 5506
+    db: imgevaldb
+    user: img
+    pwd: meihua
+
+DATAINFO:
+    -
+     name: vip
+     dlevel: 3
+     level_num: 20
+     layer_num: 1
+     base_npath: xxx/yyy/image/DEMO/EVALUATION/vip
+     transspeed: 0
+     comment: eval-vip
+     datas:
+         -
+          module_type: bs
+          node_path: xxx/yyy/image/DEMO/EVALUATION/vip
+          single_level_num: 1
+          # abs_path --> /home/data/appbs/index.0
+          data_path: /home/img/img/data/findex/bs
+          dcomment: eval-vip-bs
+         -
+          module_type: di
+          node_path: xxx/yyy/image/DEMO/EVALUATION/vip
+          single_level_num: 1
+          # abs_path --> /home/data/appdi0/data/index
+          data_path: /home/img/img/data/findex/di
+          dcomment: eval-vip-di
+    -
+     name: se
+     dlevel: 4
+     level_num: 180
+     layer_num: 1
+     base_npath: xxx/yyy/image/DEMO/EVALUATION/se
+     transspeed: 0
+     comment: eval-se
+     datas:
+         -
+          module_type: bs
+          node_path: xxx/yyy/image/DEMO/EVALUATION/se
+          single_level_num: 1
+          data_path: /home/img/img/data/findex/bs
+          dcomment: eval-se-bs
+         -
+          module_type: di
+          node_path: xxx/yyy/image/DEMO/EVALUATION/se
+          single_level_num: 1
+          data_path: /home/img/img/data/findex/di
+          dcomment: eval-se-di

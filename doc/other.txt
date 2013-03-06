@@ -1,0 +1,1 @@
+/home/img/img_hadoop/hadoop-client/hadoop/bin/hadoop fs -copyToLocal /user/root/build-img/dbuild/merge/result/vip_180 /home/img/img/data/findex
